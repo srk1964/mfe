@@ -8,7 +8,7 @@ on: [push]
 
 defaults:
   run:
-    working-directory: packages/container/**
+    working-directory: ./packages/container
 
 jobs:
   build:
