@@ -22,5 +22,3 @@ const prodConfig = {
 };
 
 module.exports = merge(commonConfig, prodConfig);
-
-// added change to kick off deployment
