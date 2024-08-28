@@ -5,11 +5,11 @@ on:
     branches:
       - main
     paths:
-      - "packages/marketing/**"
+      - 'packages/marketing/**'
 
 defaults:
   run:
-    working-directory: ./packages/marketing
+    working-directory: packages/marketing
 
 jobs:
   build:
@@ -21,14 +21,13 @@ jobs:
       - run: npm run build
 
       - uses: shinyinc/action-aws-cli@v1.2
-      - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/makreting/latest
+      - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: "us-east-1"
-
-      - run: aws cloudfront create-invalidation --distribution-id  ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/marketing/latest/index.html"
+          AWS_DEFAULT_REGION: REPLACE_WITH_YOUR_REGION
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/marketing/latest/remoteEntry.js"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: "us-east-1"
+          AWS_DEFAULT_REGION: REPLACE_WITH_YOUR_REGION
