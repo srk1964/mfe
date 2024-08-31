@@ -119,16 +119,15 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://https://unsplash.com/@random/collections"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Random Picture
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
+                      Random description goes here
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -156,7 +155,7 @@ export default function Album() {
           color="textSecondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Copyright Scott Kosta 2024
         </Typography>
         <Copyright />
       </footer>

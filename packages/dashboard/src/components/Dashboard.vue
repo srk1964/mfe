@@ -382,7 +382,7 @@ export default {
   }
 }
 $fontSize: 14px;
-$bodyBgColor: #edf0f5;
+$bodyBgColor: #1668f5;
 $textColor: #333333;
 $textSecondaryColor: #707070;
 $borderRadius: 3px;
